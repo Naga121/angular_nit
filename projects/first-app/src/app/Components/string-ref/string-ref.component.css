@@ -1,0 +1,14 @@
+.dark{
+    background-color: green;
+    color: white;
+    text-align: center;
+    border: 2px solid springgreen;
+    padding: 10px;
+}
+.light{
+    background-color: lightgreen;
+    color: white;
+    text-align: center;
+    border: 2px solid steelblue;
+    padding: 10px;
+}

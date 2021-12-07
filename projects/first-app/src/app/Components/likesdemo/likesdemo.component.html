@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="card-deck">
+        <div class="card" *ngFor="let item of Products">
+            <div class="card-header text-center">
+                <h3>{{item.Name}}</h3>
+            </div>
+            <div class="card-body text-center">
+                <img [src]="item.Photo" alt="" width="100%" height="200px">
+            </div>
+            <div class="card-footer text-center">
+                <div class="btn">
+                    <button (click)="onClickLike(item)" class="btn btn-outline-danger m-2">
+                        <span class="fa fa-thumbs-up"></span>
+                        {{item.Likes}}
+                    </button>
+                    <button (click)="onClickDislikes(item)" class="btn btn-outline-danger">
+                        <span class="fa fa-thumbs-down"></span>
+                        {{item.Dislikes}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="from-group">
+            <table border="1" class="table">
+                <thead >
+                    <tr>
+                        <th>Name</th>
+                        <th>Likes</th>
+                        <th>Dislikes</th>
+                        <th>Even</th>
+                        <th>Odd</th>
+                        <th>First</th>
+                        <th>Last</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr [class.oddstyle]="o" [class.evenstyle]="e" *ngFor="let item of Products; let e=even; let o=odd; let f=first; let l=last">
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Likes}}</td>
+                        <td>{{item.Dislikes}}</td>
+                        <td>{{e}}</td>
+                        <td>{{o}}</td>
+                        <td>{{f}}</td>
+                        <td>{{l}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

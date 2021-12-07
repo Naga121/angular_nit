@@ -1,0 +1,49 @@
+<div class="container-fluid" style="height: 400px; margin: auto;">
+    <div class="row">
+        <div class="col-5">
+            <h2>User Login</h2>
+            <div class="form-group">
+                <label for="userName">User Name</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="code">Verify Code</label>
+                <div>
+                    {{code}}
+                    <button class="btn" (click)="onClickRefresh()">
+                        <span class="fa fa-sync"></span>
+                    </button>
+                </div>
+                <div class="text">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">Login</button>
+            </div>
+
+        </div>
+
+        <div class="col-6">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of Products">
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Price}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

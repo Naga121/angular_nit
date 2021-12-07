@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="btn">
+                <div class="btn-group ">
+                    <button name="details"    (click)="showView($event)" class="btn btn-danger btn-block">Details</button>
+                    <button name="preview"    (click)="showView($event)" class="btn btn-info btn-block">Preview</button>
+                    <button name="description" (click)="showView($event)" class="btn btn-warning btn-block">Description</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <button (click)="PreviousClick()" class="btn btn-info">
+                <span class="fa fa-backward"></span>
+            </button>
+            <button (click)="NextClick()" class="btn btn-info">
+                <span class="fa fa-forward"></span>
+            </button>
+        </div>
+        <div [ngSwitch]="selectdView">
+            <div class="card" *ngSwitchCase=" 'details' ">
+                <div class="card-header">
+                    <h3>{{Product.Name}}</h3>
+                </div>
+                <div class="card-body">
+                    <h3>{{Product.Price}}</h3>
+                </div>
+                <div class="card-footer">
+                    <h3>{{(Product.InStack==true ? "Availebule" : "Out of Stock")}}</h3>
+                </div>
+            </div>
+            <div class="card" *ngSwitchCase=" 'preview' ">
+                <div class="card-body">
+                    <img [src]="Product.Photo" width="150px" height="150px" alt="">
+                </div>
+            </div>
+            <div class="card" *ngSwitchCase=" 'description' ">
+                <div class="card-body">
+                    <p>{{Product.Description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

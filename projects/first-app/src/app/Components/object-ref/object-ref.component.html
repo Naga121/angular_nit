@@ -1,0 +1,10 @@
+<div class="container-fluid">
+    <h2>Choose Effects</h2>
+    <ul class="list-unstyled">
+        <li><input type="checkbox" [(ngModel)]="isBorder" name="isBorder" id=""> Border</li>
+        <li><input type="checkbox" [(ngModel)]="isText" name="isText" id="">Text</li>
+        <li><input type="checkbox" [(ngModel)]="isShadow" name="isShadow" id="">Shadow</li>
+        <li><input type="checkbox" [(ngModel)]="isColor" name="isColor" id="">Bg Color</li>
+    </ul>
+    <h1 [ngClass]="{ 'border-effect':isBorder,'text-effect':isText,'shadow-effect':isShadow,'color':isColor}">Sample Text</h1>
+</div>

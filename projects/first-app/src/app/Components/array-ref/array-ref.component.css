@@ -1,0 +1,11 @@
+.text-effect{
+    text-align: center;
+    margin-top: 4pc;
+}
+.border-effect{
+    border: 2px solid green;
+    background-color:darkorange;
+}
+.shadow-effect{
+    box-shadow: 3px 4px 4px darkcyan;
+}

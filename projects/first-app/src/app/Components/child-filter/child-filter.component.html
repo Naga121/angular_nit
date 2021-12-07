@@ -1,0 +1,9 @@
+<div>
+    <h3>Select Category</h3>
+    <select (change)="onCategoryChange()" class="form-control" [(ngModel)]="CategoryName">
+        <option value="All">All [{{AllCount}}] </option>
+        <option value="Electronics">Electronics [{{ElectronicsCount}}] </option>
+        <option value="Footwears">Footwears [{{FootwearsCount}}]</option>
+        <option value="Fashions">Fashions [{{FashionsCount}}]</option>
+    </select>
+</div>

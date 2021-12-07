@@ -1,0 +1,16 @@
+<div>
+    <h2>UserName</h2>
+    <div>
+        <input (focus)="onFocus()" (blur)="onBlur()" type="text" placeholder="Enter Your Name" name="userName" class="form-control" [(ngModel)]="userName">
+        <span>{{msg}}</span>
+    </div>
+    <h2>Change</h2>
+    <div>
+        <label for="range">Product</label>
+        <input type="range" min="0" max="3" (change)="changeProduct()" [(ngModel)]="sliderValue">
+    </div>
+    <div>
+        <img [src]="imgSource" width="250" height="250" alt="">
+    </div>
+
+</div>

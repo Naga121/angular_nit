@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>Electronics Home</h2>
+    <ul class="list-unstyled">
+        <li (click)="onSelect(item)" [class.selected]="isSelected(item)" *ngFor="let item of course">
+           <span> {{item.id}}</span><a class="btn btn-link ">{{item.name}}</a>
+        </li>
+    </ul>
+</div>

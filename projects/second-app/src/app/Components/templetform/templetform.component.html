@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <h2 class="text-center text-success bg-light p-1">Register Form</h2>
+    <form  #frmRegister="ngForm" (submit)="onSubmit(frmRegister.value)">
+        <dl>
+            <dt>Name</dt>
+            <dd>
+                <input type="text" class="form-control" name="userName" ngModel #userName="ngModel">
+            </dd>
+            <dt>Price</dt>
+            <dd>
+                <input type="text" class="form-control" name="price" ngModel #price="ngModel">
+            </dd>
+            <dt>Shipped To</dt>
+            <dd>
+                <select name="shippedTo" class="form-control" ngModel #shippedTo="ngModel">
+                    <option value="hyd">Hyd</option>
+                    <option value="delhi">Delhi</option>
+                </select>
+            </dd>
+        </dl>
+        <button type="submit" class="btn btn-danger btn-block">submit</button>
+    </form>
+    <h2>Details [Control Refrence]</h2>
+    <dl>
+        <dt>Name</dt>
+        <dd>{{userName.value}}</dd>
+        <dt>Price</dt>
+        <dd>{{price.value}}</dd>
+        <dt>ShippedTo</dt>
+        <dd>{{shippedTo.value}}</dd>
+    </dl>
+    <h2>Details [FromRefrencr]</h2>
+    <dl>
+        <dt>Name</dt>
+        <dd>{{frmRegister.value.userName}}</dd>
+        <dt>Price</dt>
+        <dd>{{frmRegister.value.price}}</dd>
+    </dl>
+</div>

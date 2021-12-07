@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <h2>Bootstrap Group</h2>
+    <div class="form-group">
+        <label for="userName">UserName</label>
+        <div class="form-field">
+            <input type="text" class="form-control" placeholder="Ex user name" [(ngModel)]="userName">
+        </div>
+    </div>
+    <h2>Material Group</h2>
+    <mat-form-field  class=" form-control">
+        <mat-label>User Name</mat-label>
+        <input type="text"  placeholder="UserName" [(ngModel)]="userName" matInput>
+    </mat-form-field>
+    <h3>input value</h3>
+    Hello..! {{userName}}
+</div>

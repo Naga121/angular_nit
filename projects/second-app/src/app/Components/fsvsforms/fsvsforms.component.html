@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <h2>Register</h2>
+            <form #frmRegister="ngForm" [ngClass]="{'valid-style':frmRegister.valid,'invalid-style':frmRegister.invalid}">
+                <div class="form-group">
+                    <label for="userName">User Name</label>
+                    <input type="text" required minlength="4" name="userName" ngModel #userName="ngModel" maxlength="20" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" required pattern="\+91[0-9]{10}" name="mobile" ngModel #mobile="ngModel" class="form-control">
+                </div>
+                <div class="form-group">
+                    <div class="btn-group">
+                        <button class="btn btn-primary m-2" [disabled]="frmRegister.invalid">Register</button>
+                        <button class="btn btn-success m-2">save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-5">
+            <h2>Validation State</h2>
+            <table>
+                <tr>
+                    <td>Pristine</td>
+                    <td>{{frmRegister.pristine}}</td>
+                </tr>
+                <tr>
+                    <td>Dirty</td>
+                    <td>{{frmRegister.dirty}}</td>
+                </tr>
+                <tr>
+                    <td>Valid</td>
+                    <td>{{frmRegister.valid}}</td>
+                </tr>
+                <tr>
+                    <td>InValid</td>
+                    <td>{{frmRegister.invalid}}</td>
+                </tr>
+                <tr>
+                    <td>Submitted</td>
+                    <td>{{frmRegister.submitted}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

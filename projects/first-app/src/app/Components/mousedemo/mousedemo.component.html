@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <h2>Color Picker</h2>
+    <div class="row" (mouseover)="setColor($event)">
+        <div class="col-4 text-center bg-danger text-white" id="red">Red</div>
+        <div class="col-4 text-center bg-success text-white" id="green">Green</div>
+        <div class="col-4 text-center bg-info text-white" id="info">Info </div>
+    </div>
+</div>
+<h2 align="center">Sample Text</h2>
+<h3>Mouse over and out</h3>
+<marquee (mouseover)="stopMarquee($event)" (mouseout)="startMarquee($event)" style="margin: auto;" scrollamount="10" bgcolor="lightgreen">
+    <img src="../../../assets/earpods.jpg" width="100" height="100">
+    <img src="../../../assets/jbl.jpg"  width="100" height="100">
+    <img src="../../../assets/jeans.jpg" width="100" height="100">
+    <img src="../../../assets/leecooper.png" width="100" height="100">
+</marquee>
+<h3>Mouse Dwon and Up</h3>
+<div style="width: 400px;">
+    <img [ngStyle]="styleObj" src="../../../assets/shirt.webp" (mousedwon)="zoomIN()" (mouseup)="zoomOut()" width="100" height="100" alt="">
+</div>
+<h3>Mouse Dwon and Up</h3>
+<div>
+    <img [src]="offerImg" (mousedwon)="showOffer()" (mouseup)="hideOffer()" width="100" height="100" alt="">
+</div>

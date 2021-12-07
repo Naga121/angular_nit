@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="form-register">
+        <p class="text-center text-light h1">Form Register</p>
+        <hr class="bg-danger">
+        <form  #frmRegister="ngForm">
+            <div class="form-group">
+                <label for="userName">userName</label>
+                <div>
+                    <input type="text" name="userName" ngModel #userName="ngModel" class="form-control" required minlength="4">
+                    <!-- <div *ngIf="userName.invalid &&  userName.touched" class="text-danger">
+                        <span class="text-danger" *ngIf="userName.errors.required">Name Required</span>
+                        <span class="text-danger" *ngIf="userName.errors.minlength">Name too shory</span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input type="text" name="mobile" ngModel #mobile="ngModel" class="form-control" pattern="\+91[0-9]{10}" required >
+                <!-- <div class="text-danger" *ngIf="mobile.touched && mobile.invalid">
+                    <span *ngIf="mobile.errors.required">Number Required</span>
+                    <span *ngIf="mobile.errors.pattern">Invalide Number</span>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label for="selectCity">Select Your City</label>
+                <select (change)=" onCityChange(city.value)" class="form-control" name="city" ngModel #city="ngModel" required>
+                    <option value="notcity">SelectCity</option>
+                    <option value="hyd">Hyd</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                </select>
+                <span class="text-danger" *ngIf="showCityError">please select your city</span>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-block">Save</button>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,19 @@
+.form-register{
+    width: 500px;
+    border: 2px solid darkcyan;
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.valid-effect {
+    border:2px solid green;
+    box-shadow: 2px 4px 4px green;
+}
+.invalid-effect {
+    border:2px solid red;
+    box-shadow: 2px 3px 4px red;
+}
+
+   

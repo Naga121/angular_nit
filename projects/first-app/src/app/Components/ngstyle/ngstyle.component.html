@@ -1,0 +1,41 @@
+<!-- <div (mousemove)="onMouseMove($event)" class="container-fluid">
+    <img [ngStyle]="styleObj" src="assets/jbl.jpg" alt="" height="40px" width="50px">
+</div> -->
+<div class="container-fluide">
+    <div class="row">
+        <div class="col-3">
+            <h2>Choose Effect</h2>
+            <div class="form-group">
+                <label for="">Background Color</label>
+                <div>
+                    <input type="color" class="form-control"  name="bgColorCode" [(ngModel)]="bgColorCode" id="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Foreground Color</label>
+                <div>
+                    <input type="color" class="form-control"  name="fgColorCode" [(ngModel)]="fgColorCode" id="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Alignment</label>
+                <select name="alignment" [(ngModel)]="alignment" class="form-control">
+                    <option value="Left">Left</option>
+                    <option value="Center">Center</option>
+                    <option value="Right">Right</option>
+                </select>
+            </div>
+           <div class="form-group">
+               <button (click)="applyClick()" class="btn btn-danger btn-block">Apply Effect </button>
+           </div>
+        </div>
+        <div class="col-9">
+            <div style="margin-top: 100px;">
+                <h2 [ngStyle]="styleObj">Sample Text</h2> 
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

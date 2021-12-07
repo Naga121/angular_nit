@@ -1,0 +1,14 @@
+<div class="container-fluige">
+    <h2 class="text-primary text-center bg-light p-2">Scrolling</h2>
+    <cdk-virtual-scroll-viewport itemSize="100%" class="example-viewport">
+        <div class="card" *cdkVirtualFor="let product of Products">
+            <div class="card-body">
+                <img [src]="product.Photo" width="150px" height="150px" alt="">
+            </div>
+            <div class="card-footer">
+                <h2>{{product.Name}}</h2>
+                <h3>{{product.Category}}</h3>
+            </div>
+        </div>
+    </cdk-virtual-scroll-viewport>
+</div>

@@ -1,0 +1,7 @@
+<h2>Select Date</h2>
+<mat-form-field class="inputfield">
+    <mat-label>Departure Date </mat-label>
+    <input type="text" [matDatepicker]="picker" matInput>
+    <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>

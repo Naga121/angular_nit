@@ -1,0 +1,28 @@
+.form-register{
+    background-color: rgb(248, 189, 122);
+    width: 400px;
+    padding: 20px;
+    box-shadow: 5px 7px 7px rgb(71, 71, 71);
+    border-radius: 20px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+input.ng-valid{
+    border: 2px solid green;
+    box-shadow: 2px 3px 4px green;
+}
+input.ng-invalid{
+    border: 2px solid red;
+    box-shadow: 2px 3px 4px red;
+}
+
+select.ng-valid{
+    border: 2px solid green;
+    box-shadow: 2px 3px 4px green;
+}
+select.ng-invalid{
+    border: 2px solid red;
+    box-shadow: 2px 3px 4px red;
+}

@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <h3>Registation Products</h3>
+            <form [formGroup]="frmRegister">
+                <fieldset>
+                    <legend>Basic Info</legend>
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>
+                            <input type="text" formControlName="Name" class="form-control">
+                        </dd>
+                        <dt>Price</dt>
+                        <dd>
+                            <input type="text" formControlName="Price" class="form-control">
+                        </dd>
+                    </dl>
+                </fieldset>
+                <fieldset>
+                    <legend>Stock Info</legend>
+                    <div formControlName="frmInfo">
+                        <dl>
+                            <dt>City</dt>
+                            <dd>
+                                <select formControlName="City" class="form-control">
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Hyd">Hyd</option>
+                                </select>
+                            </dd>
+                            <dt>in Stock</dt>
+                            <dd>
+                                <input type="checkbox" formControlName="inStock">Yes
+                            </dd>
+                        </dl>
+                        <button (click)="upDate()" class="btn btn-primary">Update</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-5">
+            <dl>
+                <dt>Name</dt>
+                <dd>{{frmRegister.value.Name}}</dd>
+                <dt>Price</dt>
+                <dd>{{frmRegister.value.Price}}</dd>
+                <dt>City</dt>
+                <dd>{{frmRegister.value.frmInfo.City}}</dd>
+                <dt>inStock</dt>
+                <dd>{{frmRegister.value.frmInfo.inStock == true? 'Availble':'Out of Stock'}}</dd>
+            </dl>
+        </div>
+
+    </div>
+
+</div>

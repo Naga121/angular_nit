@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-header">
+                <h3>{{Product.Name}}</h3>
+                <p>{{Product.Price | currency : 'INR'}}</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <button (click)="ToggleDisplay()" class="btn btn-info">Preview</button>
+                </div>
+                <div class="form-group">
+                    <img [src]="Product.Photo" width="100%" height="150px">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-head">
+                <h3>{{Product.Name}}</h3>
+                <p>{{Product.Price | currency: 'INR'}}</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <!-- <input ngModel #Preview="ngModel" name="Preview" type="checkbox" >Preview -->
+                    <input type="checkbox" name ="Ischecked" [(ngModel)]="Ischecked" >
+                </div>
+                <div class="form-group">
+                    <img *ngIf="Ischecked" [src]="Product.Photo" width="150px" height="150px" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Your Name</h2>
+    <div class="form-inline">
+        <input type="text" name="userName" [(ngModel)]="userName" class="form-control">
+        <button (click)="submitClick()">submit</button>
+    </div>
+    <div *ngIf="showError">
+        <span class="text-danger">User name is reqired </span>
+    </div>
+</div>

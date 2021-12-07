@@ -1,0 +1,13 @@
+
+<div class="container-fluid">
+    <h1>Product Detail</h1>
+    <dl>
+        <dt>Name</dt>
+        <dd>{{Product.Name}}</dd>
+        <dd><input type="text" value="{{Product.Name}}"></dd>
+        <dt>Price</dt>
+        <dd>{{Product.Price}}</dd>
+        <dt>InStack</dt>
+        <dd>{{(Product.InStack == true )? "Avlibule" : "Out Of Stack"}}</dd>
+    </dl>
+</div>

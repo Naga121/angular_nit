@@ -1,0 +1,12 @@
+.valid-style{
+    background-color: rgb(166, 250, 166);
+}
+.invalid-style{
+    background-color: rgb(248, 160, 160);
+}
+button:disabled{
+    cursor: not-allowed;
+}
+form{
+    padding: 20px;
+}

@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <!-- <h2>Auto Complete</h2>
+    <div class="form-group">
+        <input type="text" list="countries" placeholder="Your Countries" class="form-control">
+        <datalist id="countries">
+            <option *ngFor="let item of countries">
+                {{item.Name}}
+            </option>
+        </datalist>
+    </div> -->
+    <h2>Material Complete</h2>
+    <mat-form-field class="full-width">
+        <mat-label>Choose Your Country</mat-label>
+        <input type="text" [matAutocomplete]="countriesList" matInput>
+        <mat-autocomplete #countriesList>
+            <mat-option *ngFor="let item of countries" [value]="item.Name">
+                <img [src]="item.Photo" width="25" height="25" alt="">
+                <span>{{item.Name}}</span>
+                <span>|</span>
+                <small>Callig Code:{{item.Code}}</small>
+            </mat-option>
+        </mat-autocomplete> 
+    </mat-form-field>
+
+
+    <h2>Dialog Overview</h2>
+    <button mat-button (click)="openDialog()">Open dialog</button>
+</div>

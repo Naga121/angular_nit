@@ -1,0 +1,10 @@
+<div class="container">
+    <h2>Select Theme</h2>
+    <div class="form-group">
+        <select class="form-control" [(ngModel)]="className">
+            <option value="dark">Dark Theme</option>
+            <option value="light">Light Theme</option>
+        </select>
+    </div>
+    <h1 [ngClass]="className">Sample Text</h1>
+</div>

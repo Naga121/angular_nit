@@ -1,0 +1,55 @@
+<div class="container-fluide">
+    <h1 class="text-center text-primary">Amazon Shopping</h1>
+    <div class="row">
+        <div class="col-2">
+            <div class="form-group">
+                <label for="">Select Category</label>
+                <div>
+                    <select class="form-control" [(ngModel)]="selectedCategory">
+                        <option value="" *ngFor="let item of Categorys">{{item}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Select Category</label>
+                <div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <input type="radio" value="All" name="option" [(ngModel)]="selectedCategory">All
+                        </li>
+                        <li>
+                            <input type="radio" value="Electronics" name="option" [(ngModel)]="selectedCategory">Electronics
+                        </li>
+                        <li>
+                            <input type="radio" value="Footwears" name="option" [(ngModel)]="selectedCategory">Footwears
+                        </li>
+                        <li>
+                            <input type="radio" value="Fashions" name="option" [(ngModel)]="selectedCategory">Fashions
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="card-deck">
+                <ng-container *ngFor="let item of Products">
+                    <div class="card" *ngIf="selectedCategory == 'All' || selectedCategory == 'item.Categorys' || textSerch == 'item.Name' ">
+                        <div class="card-header">
+                            <h3>{{item.Name}}</h3>
+                        </div>
+                        <div class="card-body">
+                            <img [src]="item.Photo" alt="" width="100" height="100">
+                        </div>
+                        <div class="card-footer">
+                            <h4>{{item.Price | currency:'INR'}}</h4>
+                        </div>
+                    </div>
+                </ng-container>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

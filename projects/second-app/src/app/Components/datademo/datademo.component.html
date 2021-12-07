@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <form #frmRegister="ngForm" method="POST" (submit)="onSubmit(frmRegister.value)">
+        <h2>Product Registation</h2>
+        <dl>
+            <dt>ProductId</dt>
+            <dd>
+                <input  type="text" class="form-control"  name="ProductId" ngModel #ProductId="ngModel">
+            </dd>
+            <dt>Name</dt>
+            <dd>
+                <input type="text" class="form-control" name="Name" ngModel #Name="ngModel">
+            </dd>
+            <dt>Price</dt>
+            <dd>
+                <input type="text" class="form-control" name="Price" ngModel #Price="ngModel">
+            </dd>
+        </dl>
+        <button class="btn btn-primary btn-block"> Registation</button>
+    </form>
+    <h2>Products List</h2>
+    <table class="table table-hover mt-5">
+        <thead>
+            <tr>
+                <td scope="col">ProductId</td>
+                <td scope="col">Name</td>
+                <td scope="col">Price</td>
+                <td colspan="3">Options</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of products">
+                <td>{{item.ProductId}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Price}}</td>
+                <td>
+                    <button class="btn" (click)="onDelect($event)"><span class="fa fa-trash-o text-danger" aria-hidden="true"></span></button>
+                </td>
+                <td>
+                    <button class="btn" (click)="onEdit()"><span class="fa fa-pencil-square-o text-danger"aria-hidden="true" ></span></button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

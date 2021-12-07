@@ -1,0 +1,7 @@
+.example-viewport{
+    height: 400px;
+    width: 50%;
+    border: 2px solid tomato;
+    margin-bottom: 30px;
+    padding: 10px;
+}

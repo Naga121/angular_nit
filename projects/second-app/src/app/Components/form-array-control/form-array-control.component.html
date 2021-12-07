@@ -1,0 +1,59 @@
+<div class="container-fluid"> <div class="row">
+    <div class="col-4">
+        <h2>Register Product</h2>
+        <form [formGroup]="frmRegister">
+            <fieldset>
+                <legend>Basic Info</legend>
+                <dl>
+                    <dt>Name</dt>
+                    <dd>
+                        <input type="text" formControlName="Name" class="form-control">
+                    </dd>
+                    <dt>Price</dt>
+                    <dd>
+                        <input type="text"formControlName="Price" class="form-control">
+                    </dd>
+                </dl>
+            </fieldset>
+            <fieldset>
+                <legend>Stock Details</legend> 
+                <div formGroupName="frmDetails">
+                    <dl>
+                        <dt>City</dt>
+                        <dd>
+                            <select formControlName="City"class="form-control" >
+                                <option>Delhi</option>
+                                <option>Hyd</option>
+                            </select>
+                        </dd>
+                        <dt>In Stock</dt>
+                        <dd><input type="checkbox"formControlName="InStock"> Yes</dd>
+                    </dl>
+                </div>
+                <div>
+                    <h2>Upload Photo <button (click)="AddPhoto()" class="btn btn-link">Add More</button></h2>
+                    <div *ngFor="let item of newControls.controls; let i = index" style="margin-top: 30px;">
+                        <div class="form-inline">
+                            <div><input type="file" formControlName="i"></div>
+                            <div><button (click)="RemovePhoto(i)"class="btn btn-link">Remove</button></div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-8">
+        <h2>Product Details</h2>
+        <dl>
+            <dt>Name</dt>
+            <dd>{{frmRegister.value.Name}}</dd>
+            <dt>Price</dt>
+            <dd>{{frmRegister.value.Price}}</dd>
+            <dt>City</dt>
+            <dd>{{frmRegister.value.frmDetails.City}}</dd>
+            <dt>Stock</dt>
+            <dd>{{(frmRegister.value.frmDetails.InStock==true)?"Available":"Out of Stock"}}</dd>
+        </dl>
+    </div>
+</div>
+  

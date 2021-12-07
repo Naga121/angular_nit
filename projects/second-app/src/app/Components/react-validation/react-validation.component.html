@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <h3>Register Form</h3>
+            <form [formGroup]="frmRegister" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="userName">UserName <span class="text-danger">*</span> </label>
+                    <input type="text" formControlName="userName" class="form-control">
+                    <div *ngIf="submitted && frm.userName.errors" class="text-danger">
+                        <span *ngIf="frm.userName.errors.required">UserName required</span>
+                        <span *ngIf="frm.userName.errors.minlength">UserName required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile <span class="text-danger">*</span> </label>
+                    <input type="text" formControlName="mobile" class="form-control">
+                    <div *ngIf="submitted && frm.mobile.errors" class="text-danger">
+                        <span *ngIf="frm.mobile.errors.required">Number required</span>
+                        <span *ngIf="frm.mobile.errors.pattern">Must start +91 && invalid</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="text-danger">*</span> </label>
+                    <input type="text" formControlName="Email" class="form-control">
+                    <div *ngIf="submitted && frm.Email.errors" class="text-danger">
+                        <span *ngIf="frm.Email.errors.required">Email required</span>
+                        <span *ngIf="frm.Email.errors.email">Invalid Email</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button  class="btn btn-primary btn-block">Register</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>

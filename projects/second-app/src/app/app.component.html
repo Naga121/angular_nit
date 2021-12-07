@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <h2 class="text text-center text-primary bg-light p-2">Amazon Shopping</h2>
+    <div class="row">
+        <div class="col-4">
+            <ul class="list-unstyled">
+                <li>
+                    <a routerLink="/home" class="btn btn-danger m-1">Home</a>
+                </li>
+                <li>
+                    <a routerLink="/elctronics-list" class="btn btn-danger m-1">Electronics</a>
+                </li>
+                <li>
+                    <a routerLink="/admin" class="btn btn-danger m-1">Admin</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-7">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+</div>

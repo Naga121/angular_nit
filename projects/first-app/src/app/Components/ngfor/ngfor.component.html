@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <h2>Nav bar</h2>
+            <ul>
+                <li *ngFor="let item of navItem"><a href="">{{item}}</a></li>
+            </ul>
+        </div>
+        <div class="col-2">
+            <h2>Nave menu</h2>
+            <select class="form-control" >
+                <option value="" *ngFor="let item of navItem">{{item}}</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <h2>Nave table</h2>
+            <table>
+                <tbody class="table table-hover">
+                    <tr *ngFor="let item of navItem">
+                        <td>{{item}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2">
+            <h2>Nave List</h2>
+            <select size="5" class="form-control" >
+                <option value="" *ngFor="let item of navItem">{{item}}</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <h2>Check List</h2>
+            <div class="check-list">
+                <div *ngFor="let item of navItem">
+                    <input type="checkbox" name="" id="">{{item}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

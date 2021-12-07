@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="form-register">
+        <h3>User Register</h3>
+        <div class="form-group">
+            <label for="Name">User Name</label>
+            <input [ngClass]="{'valid-effect':validStyle,'invalid-effect': invalidStyle}" (keyup)="VerifyUser()" type="text" name="userName" [(ngModel)]="userName" class="form-control">
+            <span [ngClass]="{'text-danger':invalidStyle,'text-success':validStyle}">{{message}}</span>
+        </div>
+        <div class="form-group">
+            <label for="Name">Password</label>
+            <input (keyup)="VerifyPasswordStr()" (keypress)="VerifyCaps($event)" type="password" [(ngModel)]="password" class="form-control">
+            <span *ngIf=" showWraning" class="text-dander">
+                <span class="fa fa-exclamation-triangle"></span>
+                Caps is ON
+            </span>
+        </div>
+        <span>{{passwordMessage}}</span>
+    </div>
+</div>

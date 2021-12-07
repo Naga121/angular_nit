@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <h3>Nav Bar</h3>
+            <ul>
+                <li *ngFor="let item of NavItem">
+                    <a href="#">{{item.Category}}</a>
+                    <ol>
+                        <li *ngFor="let data of item.Products">
+                            {{data}}
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="col-3">
+            <h3>Nav Menu</h3>
+            <select class="form-control">
+                <optgroup *ngFor="let item of NavItem" label=" {{item.Category}} ">
+                    <option *ngFor="let data of item.Products">{{data}}</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="col-3">
+            <h3>Nav Collaps</h3>
+            <div *ngFor="let item of NavItem">
+                <details>
+                    <summary>{{item.Category}}</summary>
+                    <ul>
+                        <li *ngFor="let data of item.Products">
+                            <a href="">{{data}}</a>
+                        </li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </div>
+</div>
